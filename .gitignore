@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local data and outputs
+data/
+datasets/
+runs/
+outputs/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Media and annotations that may contain private/adult material
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.bmp
+*.gif
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+*.jsonl
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Allow non-sensitive examples
+!examples/*.json
+!examples/*.yaml
+dist/
+release_assets/
+*.zip
+*.tar.gz
+SHA256SUMS
