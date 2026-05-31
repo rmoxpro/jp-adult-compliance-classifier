@@ -98,14 +98,19 @@ python scripts/train_yolo_seg.py \
   --batch 12
 ```
 
-学習済み重みで画像推論します。
+公開済み重みをダウンロードして画像推論します。
 
 ```bash
+curl -L -o jp-adult-compliance-model-v0.1.0.zip \
+  https://github.com/rmoxpro/jp-adult-compliance-classifier/releases/download/v0.1.0/jp-adult-compliance-model-v0.1.0.zip
+unzip jp-adult-compliance-model-v0.1.0.zip -d jp-adult-compliance-model-v0.1.0
 python scripts/predict_image.py \
-  --weights runs/yolo/jp_compliance_yolo/weights/best.pt \
+  --weights jp-adult-compliance-model-v0.1.0/weights/yolo_best.pt \
   image1.jpg image2.jpg \
   --out results.json
 ```
+
+出力JSONの `verdict` は `mosaic`、`uncensored`、`none` のいずれかです。`uncensored` は人間レビュー対象として扱ってください。
 
 任意でStage 2分類器を学習します。
 
@@ -279,14 +284,19 @@ python scripts/train_yolo_seg.py \
   --batch 12
 ```
 
-Run image prediction with your trained weights:
+Download the published weights and run image prediction:
 
 ```bash
+curl -L -o jp-adult-compliance-model-v0.1.0.zip \
+  https://github.com/rmoxpro/jp-adult-compliance-classifier/releases/download/v0.1.0/jp-adult-compliance-model-v0.1.0.zip
+unzip jp-adult-compliance-model-v0.1.0.zip -d jp-adult-compliance-model-v0.1.0
 python scripts/predict_image.py \
-  --weights runs/yolo/jp_compliance_yolo/weights/best.pt \
+  --weights jp-adult-compliance-model-v0.1.0/weights/yolo_best.pt \
   image1.jpg image2.jpg \
   --out results.json
 ```
+
+The output JSON `verdict` is one of `mosaic`, `uncensored`, or `none`. Treat `uncensored` as a human-review signal.
 
 Optional Stage 2 training:
 

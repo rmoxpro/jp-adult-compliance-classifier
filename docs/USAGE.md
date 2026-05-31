@@ -43,7 +43,28 @@ python scripts/train_stage2_twostream.py \
   --draw-bbox
 ```
 
-## 5. Run Image Prediction
+## 5. Run Image Prediction with Released Weights
+
+Download and unpack the model-weight release asset:
+
+```bash
+curl -L -o jp-adult-compliance-model-v0.1.0.zip \
+  https://github.com/rmoxpro/jp-adult-compliance-classifier/releases/download/v0.1.0/jp-adult-compliance-model-v0.1.0.zip
+unzip jp-adult-compliance-model-v0.1.0.zip -d jp-adult-compliance-model-v0.1.0
+```
+
+Run prediction with the YOLO detector:
+
+```bash
+python scripts/predict_image.py \
+  --weights jp-adult-compliance-model-v0.1.0/weights/yolo_best.pt \
+  image1.jpg image2.jpg \
+  --out results.json
+```
+
+The output is JSON with one verdict per image: `mosaic`, `uncensored`, or `none`. Treat `uncensored` as a human-review signal, not an automatic legal decision.
+
+You can also use your own trained YOLO weights:
 
 ```bash
 python scripts/predict_image.py \
@@ -51,5 +72,3 @@ python scripts/predict_image.py \
   image1.jpg image2.jpg \
   --out results.json
 ```
-
-The output is JSON with one verdict per image: `mosaic`, `uncensored`, or `none`.
