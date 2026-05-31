@@ -48,7 +48,7 @@ These metrics are from private internal evaluation sets. They are not public ben
 
 ## License
 
-The source code and the released model weights are distributed under the MIT License. See `LICENSE` in the repository and release package.
+The source code and the released model weights are distributed under the MIT License. See `LICENSE` in the repository for the license text.
 
 ## Limitations
 

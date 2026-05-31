@@ -60,7 +60,7 @@ jp-adult-compliance-model-v0.1.0.zip
 SHA256:
 
 ```text
-6005ee09f5110c025e0a98a82bfc70e25e9898a64b2eca24c6747e5044a2a4d9
+706ac5fa74a10150b7ecde7264ccc73135bb7366d32358ca7402f9e5e4f4e1d2
 ```
 
 重みの内容とRelease運用の詳細は [RELEASE.md](RELEASE.md) を参照してください。
@@ -236,7 +236,7 @@ jp-adult-compliance-model-v0.1.0.zip
 SHA256:
 
 ```text
-6005ee09f5110c025e0a98a82bfc70e25e9898a64b2eca24c6747e5044a2a4d9
+706ac5fa74a10150b7ecde7264ccc73135bb7366d32358ca7402f9e5e4f4e1d2
 ```
 
 See [RELEASE.md](RELEASE.md) for release details.
