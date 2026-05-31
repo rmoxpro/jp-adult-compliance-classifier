@@ -55,6 +55,12 @@ jp-adult-compliance-model-v0.1.0.zip
 
 重みの内容とRelease運用の詳細は [RELEASE.md](RELEASE.md) を参照してください。
 
+## 評価結果
+
+公開配布している推奨重みの内部評価では、YOLO検出器は mAP50 約 `0.94`、Stage 2 two-stream分類器は validation accuracy 約 `99.3%` でした。
+
+これらは非公開の内部評価セットでの参考値です。公開データセットによる再現値ではなく、実運用での精度は対象ドメイン、画質、ラベル基準、しきい値に依存します。最終判断には必ず人間レビューが必要です。
+
 ## クイックスタート
 
 ```bash
@@ -219,6 +225,12 @@ See [RELEASE.md](RELEASE.md) for release details.
 
 - [Dataset format](docs/DATASET.md)
 - [Usage](docs/USAGE.md)
+
+## Evaluation
+
+On internal evaluation data, the recommended released weights achieved approximately `0.94` YOLO mAP50 and approximately `99.3%` Stage 2 validation accuracy.
+
+These are reference metrics from private internal evaluation sets, not reproducible public benchmark results. Real-world performance depends on the operating domain, image quality, labeling policy, and thresholds. Human review is required for final decisions.
 
 ## Quick Start
 

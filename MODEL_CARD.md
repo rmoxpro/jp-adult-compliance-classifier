@@ -37,6 +37,15 @@ Stage 2 classifier:
 - `other`
 - `uncensored`
 
+## Evaluation Metrics
+
+Internal evaluation for the recommended released weights:
+
+- YOLO detector: approximately `0.94` mAP50 on internal validation/test data
+- Stage 2 two-stream classifier: `0.9927` validation accuracy
+
+These metrics are from private internal evaluation sets. They are not public benchmark results and should not be interpreted as a guarantee of performance in other domains.
+
 ## Limitations
 
 - The model does not determine legality.
