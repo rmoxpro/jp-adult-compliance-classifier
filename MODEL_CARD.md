@@ -46,6 +46,10 @@ Internal evaluation for the recommended released weights:
 
 These metrics are from private internal evaluation sets. They are not public benchmark results and should not be interpreted as a guarantee of performance in other domains.
 
+## License
+
+The source code and the released model weights are distributed under the MIT License. See `LICENSE` in the repository and release package.
+
 ## Limitations
 
 - The model does not determine legality.

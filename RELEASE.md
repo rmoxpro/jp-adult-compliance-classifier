@@ -3,7 +3,7 @@
 This project keeps source code and model weights separate.
 
 - Git repository: source code, docs, scripts, examples
-- GitHub Release assets: trained model weights and checksums
+- GitHub Release assets: trained model weights, MIT License text, and checksums
 
 ## 1. Create the Release Asset Zip
 
@@ -31,6 +31,7 @@ weights/stage2_twostream_best.pt
 release_manifest.json
 README_WEIGHTS.md
 SHA256SUMS
+LICENSE
 ```
 
 ## 2. Push Source Code
@@ -65,7 +66,7 @@ Initial public release.
 
 This release includes source code for training and inference plus a separate model-weight package for Japanese adult-content compliance review workflows.
 
-The model package is intended for human moderation assistance only. It is not legal advice and does not determine legality by itself.
+The model package is distributed under the MIT License and is intended for human moderation assistance only. It is not legal advice and does not determine legality by itself.
 
 Assets:
 - `jp-adult-compliance-model-v0.1.0.zip`

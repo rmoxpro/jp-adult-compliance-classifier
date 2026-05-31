@@ -46,12 +46,18 @@ def main() -> None:
     yolo_dst.write_bytes(yolo_src.read_bytes())
     stage2_dst.write_bytes(stage2_src.read_bytes())
 
-    files = [yolo_dst, stage2_dst]
+    license_src = Path(__file__).resolve().parents[1] / "LICENSE"
+    license_dst = build_dir / "LICENSE"
+    license_dst.write_text(license_src.read_text(encoding="utf-8"), encoding="utf-8")
+
+    files = [yolo_dst, stage2_dst, license_dst]
     checksums = {str(p.relative_to(build_dir)): sha256_file(p) for p in files}
     manifest = {
         "version": args.version,
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "purpose": "Japanese adult-content compliance review assistance",
+        "license": "MIT",
+        "weights_license": "MIT",
         "not_legal_advice": True,
         "requires_human_review": True,
         "files": {
@@ -60,12 +66,19 @@ def main() -> None:
                 "classes": {"0": "mosaic_nsfw", "1": "nude_genital"},
                 "sha256": checksums["weights/yolo_best.pt"],
                 "size_bytes": yolo_dst.stat().st_size,
+                "license": "MIT",
             },
             "weights/stage2_twostream_best.pt": {
                 "role": "Optional Stage 2 two-stream classifier",
                 "classes": ["mosaic", "other", "uncensored"],
                 "sha256": checksums["weights/stage2_twostream_best.pt"],
                 "size_bytes": stage2_dst.stat().st_size,
+                "license": "MIT",
+            },
+            "LICENSE": {
+                "role": "MIT license text for the source code and released model weights",
+                "sha256": checksums["LICENSE"],
+                "size_bytes": license_dst.stat().st_size,
             },
         },
     }
@@ -77,8 +90,12 @@ def main() -> None:
         "Files:\n\n"
         "- weights/yolo_best.pt: YOLO segmentation detector\n"
         "- weights/stage2_twostream_best.pt: optional Stage 2 false-positive reduction classifier\n"
-        "- release_manifest.json: metadata and class names\n"
-        "- SHA256SUMS: checksums\n\n"
+        "- release_manifest.json: metadata, class names, and license information\n"
+        "- SHA256SUMS: checksums\n"
+        "- LICENSE: MIT License text\n\n"
+        "License:\n\n"
+        "The released model weights in this package are distributed under the MIT License. "
+        "The same license applies to the source code in the Git repository.\n\n"
         "These weights are intended for compliance support and human moderation assistance. "
         "They do not determine legality and are not legal advice.\n"
     )

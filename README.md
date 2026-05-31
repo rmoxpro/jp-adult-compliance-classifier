@@ -40,7 +40,7 @@
 
 ## モデル重み
 
-Gitリポジトリ本体には学習済み重みを保存していません。公式重みはGitHub Release assetsで公開されています。
+Gitリポジトリ本体には学習済み重みを保存していません。公式重みはGitHub Release assetsで公開されています。Release asset内の学習済み重みもMIT Licenseで配布しています。
 
 公開済みRelease asset:
 
@@ -60,7 +60,7 @@ jp-adult-compliance-model-v0.1.0.zip
 SHA256:
 
 ```text
-706ac5fa74a10150b7ecde7264ccc73135bb7366d32358ca7402f9e5e4f4e1d2
+6005ee09f5110c025e0a98a82bfc70e25e9898a64b2eca24c6747e5044a2a4d9
 ```
 
 重みの内容とRelease運用の詳細は [RELEASE.md](RELEASE.md) を参照してください。
@@ -216,7 +216,7 @@ Do not use this project to discover, collect, rank, recommend, or distribute exp
 
 ## Model Weights
 
-The Git repository does not store trained weights. Official weights are published as GitHub Release assets.
+The Git repository does not store trained weights. Official weights are published as GitHub Release assets. The trained weights in the release asset are also distributed under the MIT License.
 
 Published release asset:
 
@@ -236,7 +236,7 @@ jp-adult-compliance-model-v0.1.0.zip
 SHA256:
 
 ```text
-706ac5fa74a10150b7ecde7264ccc73135bb7366d32358ca7402f9e5e4f4e1d2
+6005ee09f5110c025e0a98a82bfc70e25e9898a64b2eca24c6747e5044a2a4d9
 ```
 
 See [RELEASE.md](RELEASE.md) for release details.
